@@ -9,17 +9,19 @@ const btnDestroyRef = document.querySelector("[data-destroy]");
 
 btnCreateRef.addEventListener("click", createBoxes);
 
+let baseboxSize = 30;
+
 function createBoxes(event) {
-  let baseboxSize = 30;
   let amount = Number(inputRef.value);
   for (let i = 0; i < amount; i++) {
-    baseboxSize += 10;
     const newBox = document.createElement("div");
     newBox.style.background = getRandomHexColor();
     newBox.style.height = baseboxSize + "px";
     newBox.style.width = baseboxSize + "px";
+    baseboxSize += 10;
     newBox.classList.add("new-box");
     boxesAddDivRef.append(newBox);
+    inputRef.value = "";
   }
 }
 
@@ -28,4 +30,5 @@ btnDestroyRef.addEventListener("click", destroyBoxes);
 function destroyBoxes(event) {
   inputRef.value = "";
   boxesAddDivRef.innerHTML = "";
+  baseboxSize = 30;
 }

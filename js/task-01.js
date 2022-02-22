@@ -1,13 +1,12 @@
-const categoriesTitleRef = document.querySelectorAll("h2");
-console.log(`Number of categories: ${categoriesTitleRef.length}`);
+const amountItems = document.querySelectorAll(".item").length;
+console.log("Number of categories:", amountItems);
 
-const categoriesRef = document.querySelectorAll(".item");
+const findItem = document.querySelectorAll(".item");
 
-console.log(`Category: ${categoriesTitleRef[0].textContent}`);
-console.log(`Elements: ${categoriesRef[0].lastElementChild.children.length}`);
+findItem.forEach((item) => {
+  const categoryText = item.querySelector("h2").textContent;
+  console.log("Category:", categoryText);
 
-console.log(`Category: ${categoriesTitleRef[1].textContent}`);
-console.log(`Elements: ${categoriesRef[1].lastElementChild.children.length}`);
-
-console.log(`Category: ${categoriesTitleRef[2].textContent}`);
-console.log(`Elements: ${categoriesRef[2].lastElementChild.children.length}`);
+  const amountRef = item.querySelectorAll("li").length;
+  console.log("Elements:", amountRef);
+});

@@ -12,11 +12,8 @@ function onLoginFormRefSubmit(event) {
   if (email === "" || password === "") {
     return alert(" Увага !!! Твої руки наче макарони)))");
   }
-  const formData = new FormData(event.currentTarget);
+  const formData = { password, email };
   console.log(formData);
-  formData.forEach((value, name) => {
-    console.log(value);
-    console.log(name);
-  });
+
   event.currentTarget.reset();
 }

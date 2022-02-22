@@ -8,8 +8,8 @@ const colorValueRef = document.querySelector(".color");
 btnColorRef.addEventListener("click", onBtnColorRefClick);
 
 function onBtnColorRefClick(event) {
-  colorValueRef.textContent = getRandomHexColor();
-  document.body.style.backgroundColor = getRandomHexColor();
+  const color = getRandomHexColor();
 
-  // console.log(colorValueRef.textContent);
+  colorValueRef.textContent = color;
+  document.body.style.backgroundColor = color;
 }
